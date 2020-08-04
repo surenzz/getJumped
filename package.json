@@ -1,0 +1,24 @@
+{
+  "name": "getJumped-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@discordjs/opus": "github:discordjs/opus",
+    "discord.js": "^11.6.4",
+    "dotenv": "^8.2.0",
+    "ffmpeg": "0.0.4",
+    "nodemon": "^2.0.4",
+    "pm2": "^4.4.0",
+    "prism-media": "github:hydrabolt/prism-media",
+    "utf-8-validate": "^5.0.2"
+  }
+}
