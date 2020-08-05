@@ -19,7 +19,7 @@ bot.on('ready', () => {
         game: {
             name: 'get jumped',
             type: "STREAMING",
-            url: "https://www.twitch.tv/gambinothegawd/video/662703857"
+            url: "https://www.twitch.tv/"
         },
     });
 });
