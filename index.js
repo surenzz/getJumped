@@ -26,8 +26,8 @@ bot.on('ready', () => {
 
 bot.on('voiceStateUpdate', (oldMember, newMember) => {
     if (!oldMember.voiceChannel && newMember.voiceChannel) {
-        console.log(newMember.user.username + " joined.");
-        if (run == true && newMember.user.bot == false && newMember.voiceChannelID == origVC) {
+        if (run && newMember.user.bot == false && newMember.voiceChannelID == origVC) {
+            console.log(newMember.user.username + " joined.");
 	        run = false;
             newMember.setVoiceChannel(gotJumpedVC);
             client.on('ready', () => {
@@ -84,22 +84,6 @@ bot.on('voiceStateUpdate', (oldMember, newMember) => {
             }
         }
 
-    } else if (oldMember.voiceChannel && newMember.voiceChannel) {
-        if (!oldMember.deaf && newMember.deaf) {
-            console.log(newMember.user.username + " deafened")
-        } else if (oldMember.deaf && !newMember.deaf) {
-            console.log(newMember.user.username + " un-deafened")
-        } else if (!oldMember.mute && newMember.mute) {
-            console.log(newMember.user.username + " muted")
-        }
-        else if (oldMember.mute && !newMember.mute) {
-            console.log(newMember.user.username + " un-muted")
-        }
-        else {
-            console.log(newMember.user.username + " has switched voice channels.");
-        }
-    } else if (oldMember.voiceChannel && !newMember.voiceChannel) {
-        console.log(newMember.user.username + " has left the voice channel.");
     }
 });
 
