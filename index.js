@@ -24,9 +24,9 @@ bot.on('ready', () => {
 
 bot.on("message", message => {
     if (message) {
-        if (message.content == "!unmook") {
+        if (message.content == "!unbruh") {
             try {
-                const role = message.guild.roles.find((role) => role.name === "MOOK");
+                const role = message.guild.roles.find((role) => role.name === "BRUH");
                 role.members.forEach((member) => {
                     member.removeRole(role);
                     console.log(member.user.username + " unmooked");
