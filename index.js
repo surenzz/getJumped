@@ -56,7 +56,9 @@ bot.on('voiceStateUpdate', async (oldMember, newMember) => {
                 const channel2 = musicPlayer2.channels.get(gotShotVC);
                 if (!channel2) return console.error("The channel does not exist");
                 const connection2 = await channel2.join();
-                const dispatcher2 = connection2.playFile('gotshot.mp3');
+                const dispatcher2 = connection2.playFile('gotshot.mp3', {
+                    volume: 1.5
+                });
                 dispatcher2.on('start', () => {
                     console.log('audio now playing');
                 });
@@ -100,8 +102,9 @@ bot.on('voiceStateUpdate', async (oldMember, newMember) => {
                 const channel = musicPlayer.channels.get(gotJumpedVC);
                 if (!channel) return console.error("The channel does not exist");
                 const connection = await channel.join();
-                const dispatcher = connection.playFile('wegotem.mp3');
-                dispatcher.setVolume(0.1);
+                const dispatcher2 = connection2.playFile('gotshot.mp3', {
+                    volume: 0.1
+                });
                 dispatcher.on('start', () => {
                     console.log('audio now playing');
                 });
