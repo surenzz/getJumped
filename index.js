@@ -70,7 +70,7 @@ bot.on('voiceStateUpdate', async (oldMember, newMember) => {
 
         if (newMember.voiceChannelID == stonedVC) {
             console.log(newMember.user.username + " got stoned");
-            const role = newMember.guild.roles.find((role) => role.name === "MOOK");
+            const role = newMember.guild.roles.find((role) => role.name === "BRUH");
             newMember.addRoles([role.id]).catch(console.error);
         }
 
