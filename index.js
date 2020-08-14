@@ -1,6 +1,7 @@
 require('dotenv').config();
 const TOKEN = process.env.JARVIS;
 const BEN_10 = process.env.BEN_10;
+const SHOTGUN = process.env.SHOTGUN;
 const auth = require('./tokens.json');
 const Discord = require('discord.js');
 const bot = new Discord.Client();
@@ -29,7 +30,7 @@ bot.on("message", message => {
                 const role = message.guild.roles.find((role) => role.name === "BRUH");
                 role.members.forEach((member) => {
                     member.removeRole(role);
-                    console.log(member.user.username + " unmooked");
+                    console.log(member.user.username + " unbruh");
                     message.react('🗿');
                 });
             } catch (error) {}
@@ -65,7 +66,7 @@ bot.on('voiceStateUpdate', async (oldMember, newMember) => {
                 });
                 dispatcher2.on('error', console.error);
             })
-            musicPlayer2.login(BEN_10);
+            musicPlayer2.login(SHOTGUN);
         }
 
         if (newMember.voiceChannelID == stonedVC) {
